@@ -8,13 +8,14 @@ def register_test():
     def decorator(func):
         _REGISTERED_TESTS.append(func)
         return func
+
     return decorator
 
 
 def run_cli_command(script, args):
     result = subprocess.run([script] + args, capture_output=True, text=True)
-    print("stdout: \n", result.stdout, end='\n')
-    print("stderr: \n", result.stderr, end='\n')
+    print("stdout: \n", result.stdout, end="\n")
+    print("stderr: \n", result.stderr, end="\n")
     return result.returncode
 
 
