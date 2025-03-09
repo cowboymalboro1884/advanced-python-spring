@@ -10,7 +10,8 @@ def tail(file, lines=10):
         return "".join(content[-lines:])
     except FileNotFoundError:
         click.echo(
-            f"mytail.py: cannot open '{file}' for reading: No such file or directory",
+            f"mytail.py: cannot open '{file}' "
+            "for reading: No such file or directory",
             err=True,
         )
         return None
@@ -23,7 +24,7 @@ def tail_stdin(lines=17):
 
 @click.command()
 @click.argument("files", nargs=-1, type=click.Path(exists=False))
-def main(files):
+def mytail(files):
     if files:
         for i, file in enumerate(files):
             if len(files) > 1:
@@ -36,4 +37,4 @@ def main(files):
 
 
 if __name__ == "__main__":
-    main()
+    mytail()
