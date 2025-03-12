@@ -1,0 +1,23 @@
+python3 bin/mywc.py test/artifacts/data/file1.txt
+
+       3      31     353 test/artifacts/data/file1.txt
+
+python3 bin/mywc.py test/artifacts/data/file*.txt
+
+       3      31     353 test/artifacts/data/file1.txt
+       3      34     387 test/artifacts/data/file2.txt
+      16      16      39 test/artifacts/data/file3.txt
+      22      81     779 total
+
+python3 bin/mywc.py
+
+stdin:
+asd
+asd
+asd
+asd
+asdfds
+sdkfsldfks
+
+stdout:
+       6       6      34
