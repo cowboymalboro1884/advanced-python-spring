@@ -19,3 +19,21 @@ def generate_table(data):
     latex_code.append("\\end{tabular}\n")
     
     return "\n".join(latex_code)
+
+def generate_image(image_path, caption="Example Image", width=r"\textwidth"):
+    return f"""
+\\begin{{figure}}[htbp]
+    \\centering
+    \\includegraphics[width={width}]{{{image_path}}}
+    \\caption{{{caption}}}
+\\end{{figure}}
+"""
+
+def generate_document(filename, data):
+    with open(filename, "w") as f:
+        f.write("\\documentclass{article}\n")
+        f.write("\\usepackage[utf8]{inputenc}\n")
+        f.write("\\usepackage{graphicx}")
+        f.write("\\begin{document}\n\n")
+        f.write(data)
+        f.write("\\end{document}\n")
