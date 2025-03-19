@@ -1,14 +1,12 @@
 [project]
 name = "mygenlatex"
-version = "0.1.3"
+version = "0.1.5"
 description = ""
 authors = [
     {name = "Даниил Нейков",email = "nejkovdaniil@gmail.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = [
-]
 
 
 [build-system]
